@@ -21,6 +21,7 @@ char    *ft_strcapitalize(char *str)
     int i;
 
     ft_strlowcase(str);
+    i = 0;
     while (str[i] != '\0')
     {
         if ((str[i] >= 'a' && str[i] <= 'z')
