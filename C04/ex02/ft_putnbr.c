@@ -1,5 +1,4 @@
 #include <unistd.h>
-//#include <stdlib.h>
 
 void    ft_putnbr(int nb)
 {
@@ -21,6 +20,7 @@ void    ft_putnbr(int nb)
         write(1, &c, 1);
 }
 
+//#include <stdlib.h>
 /*int   main(int argc, char *argv[])
 {
         if (argc == 2)
