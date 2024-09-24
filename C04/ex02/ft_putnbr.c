@@ -20,12 +20,12 @@ void    ft_putnbr(int nb)
         write(1, &c, 1);
 }
 
-//#include <stdlib.h>
-/*int   main(int argc, char *argv[])
+#include <stdlib.h>
+int   main(int argc, char *argv[])
 {
         if (argc == 2)
         {
                 ft_putnbr(atoi(argv[1]));
                 return (0);
         }
-}*/
+}
