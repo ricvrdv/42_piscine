@@ -2,40 +2,32 @@
 
 int     main(int argc, char *argv[])
 {
-        int     i;
-        int     j;
-        int     rep;
-        char    *alpha_low = "abcdefghijklmnopqrstuvwxyz";
-        char    *alpha_upp = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        int     letter;
+        int     repeat;
 
-        if (argc != 2)
+
+        if (argc == 2)
         {
-                write(1, "\n", 1);
-        }
-        else
-        {
-                i = 0;
-                while (argv[1][i] != '\0')
+                letter = 0;
+                while (argv[1][letter] != '\0')
                 {
-                        j = 0;
-                        if (!((argv[1][i] >= 'a' && argv[1][i] <= 'z')
-                                        || (argv[1][i] >= 'A' && argv[1][i] <= 'Z')))
+                        repeat = 1;
+                        if (argv[1][letter] >= 'a' && argv[1][letter] <= 'z')
                         {
-                                write(1, &argv[1][i], 1);
+                                repeat += argv[1][letter] - 'a';
                         }
-                        else if (argv[1][i] == alpha_low[j] || argv[1][i] == alpha_upp[j])
+                        else if (argv[1][letter] >= 'A' && argv[1][letter] <= 'Z')
                         {
-                                rep = 0;
-                                while (rep <= j)
-                                {
-                                        write(1, &argv[1][i], 1);
-                                        rep++;
-                                }
-                                rep = 0;
+                                repeat += argv[1][letter] - 'A';
                         }
-                        i++;
+                        while (repeat)
+                        {
+                                write(1, &argv[1][letter], 1);
+                                repeat--;
+                        }
+                        letter++;
                 }
-                write(1, "\n", 1);
         }
+        write(1, "\n", 1);
         return (0);
 }
